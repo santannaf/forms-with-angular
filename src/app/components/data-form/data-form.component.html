@@ -1,0 +1,40 @@
+<form class="needs-validation" focusInvalidInput  novalidate [formGroup]="formulario" (ngSubmit)="onSubmit()" 
+style="padding-top: 10px;">
+    <div class="form-group">
+
+        <div class="col-sm-8">
+            <label for="nome" class="control-label">Nome</label>
+        </div>
+
+        <div class="col-sm-8">
+            <input type="text" class="form-control" formControlName="nome" id="nome" placeholder="Nome"
+                [ngClass]="{'is-invalid': submitted && hasError('nome')}">
+            <div class="invalid-feedback">
+                Campo está vazio, por favor preencha o campo com um nome válido.
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-8">
+            <label for="email" class="control-label">Email</label>
+        </div>
+        <div class="col-sm-8">
+            <input 
+            type="email" 
+            class="form-control" 
+            formControlName="email" 
+            id="email" 
+            placeholder="nome@email.com"
+            [ngClass]="{'is-invalid': submitted && hasError('email')}">
+            <div class="invalid-feedback">
+                Campo está vazio, por favor preencha o campo com um email válido.
+            </div>
+        </div>
+    </div>
+
+    <div style="padding-left: 14px;">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-secondary" (click)="onCancel()" style="margin-left: 5px;">Cancelar</button>
+    </div>
+</form>
